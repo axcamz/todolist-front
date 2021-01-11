@@ -1,10 +1,10 @@
 import './assets/css/app.css'
-import { Container } from './components/atoms';
+import Register from './pages/Register';
 
 function App() {
   return (
-    <div className="bg-blue-800">
-        <h1 className="text-white">Hello World</h1>
+    <div>
+      <Register/>
     </div>
   );
 }
