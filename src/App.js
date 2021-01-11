@@ -4,9 +4,7 @@ import { Container } from './components/atoms';
 function App() {
   return (
     <div className="bg-blue-800">
-      <Container>
         <h1 className="text-white">Hello World</h1>
-      </Container>
     </div>
   );
 }
