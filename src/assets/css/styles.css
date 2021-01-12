@@ -6,6 +6,7 @@
     transform: translate(10px, -5px);
     transition: transform .3s;
     transition-duration: 200ms;
+    z-index: 0;
 }
 
 .bar{

@@ -162,6 +162,10 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
+      playfair: [
+        'Playfair Display',
+        'sans-serif'
+      ],
       sans: [
         'ui-sans-serif',
         'system-ui',
