@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { PasswordInput, TextInput } from "../../components/molecules"
+import { LabeledInput } from "../../components/molecules"
 import { Auth } from "../../components/templates"
 
 const Register = () => {
@@ -25,17 +25,20 @@ const Register = () => {
 
     return (
         <Auth onSubmit={() => _submitAttr()}>
-            <TextInput
+            <LabeledInput
                 title="Username"
                 name="username"
+                type="text"
                 onChange={(e) => handleInput(e)}
             />
-            <PasswordInput 
+            <LabeledInput 
+                password
                 title="Password"
                 name="password"
                 onChange={(e) => handleInput(e)}
             />
-            <PasswordInput 
+            <LabeledInput 
+                password
                 title="Confirm Password"
                 name="password_confirm"
                 onChange={(e) => handleInput(e)}

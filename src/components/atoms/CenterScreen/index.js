@@ -1,6 +1,6 @@
 const CenterScreen = ({children}) => {
     return (
-        <div className="w-screen h-screen flex justify-center items-center">
+        <div className="w-full h-screen flex justify-center items-center">
             {children}
         </div>
     )

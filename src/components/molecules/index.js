@@ -1,7 +1,5 @@
-import TextInput from './TextInput'
-import PasswordInput from './PasswordInput'
+import LabeledInput from './LabeledInput'
 
 export {
-    TextInput,
-    PasswordInput
+    LabeledInput,
 }
