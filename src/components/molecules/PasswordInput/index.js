@@ -1,22 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {Input, ToggleEyeIcon} from '../../atoms/index'
 
 
-const PasswordInput = ({id, title, name, className, value, currentValue, error}) => {
-    const [input, setInput] = useState('')
+const PasswordInput = ({id, title, name, className, value, onChange, error}) => {
+    const inputRef = useRef()
     const [label, setLabel] = useState(false)
 
     // true => type=password | false => type=text
     const [type, setType] = useState()
 
     useEffect(() => {
-        currentValue(input)
-        if(input.length > 0){
+        const currentValue = inputRef?.current?.value
+        if(currentValue.length > 0){
             setLabel(true)
         } else {
             setLabel(false)
         }
-    }, [setLabel, input])
+    }, [setLabel, label, inputRef?.current?.value])
 
 
     return (
@@ -26,9 +26,10 @@ const PasswordInput = ({id, title, name, className, value, currentValue, error})
                     className={"input bg-transparent z-10"} 
                     name={name} 
                     id={id} 
+                    data={inputRef}
                     value={value}
                     type={type ? "password":"text"}
-                    onChange={(e) => setInput(e.target.value)}
+                    onChange={onChange}
                 />
                 <ToggleEyeIcon 
                     hiddenPassword={(value) => setType(value)}

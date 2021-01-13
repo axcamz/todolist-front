@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { PasswordInput, TextInput } from "../../components/molecules"
 import { Auth } from "../../components/templates"
 
@@ -9,12 +9,18 @@ const Register = () => {
         password_confirm: ''
     })
 
-    useEffect(() => {
-        console.log(attr);
-    })
-
     const _submitAttr = () => {
-        alert(attr.username)
+        const {username, password, password_confirm} = attr
+        // alert(username+password+password_confirm)
+    }
+
+    const handleInput = (e) => {
+        const {value, name} = e.target
+        setAttr({
+            ...attr,
+            [name]: value
+        })
+        console.log(attr);
     }
 
     return (
@@ -22,17 +28,17 @@ const Register = () => {
             <TextInput
                 title="Username"
                 name="username"
-                currentValue={(value) => setAttr({...attr, username: value})}
+                onChange={(e) => handleInput(e)}
             />
             <PasswordInput 
                 title="Password"
                 name="password"
-                currentValue={(value) => setAttr({...attr, password: value})}       
+                onChange={(e) => handleInput(e)}
             />
             <PasswordInput 
                 title="Confirm Password"
                 name="password_confirm"
-                currentValue={(value) => setAttr({...attr, password_confirm: value})}
+                onChange={(e) => handleInput(e)}
             />
         </Auth>
     )
