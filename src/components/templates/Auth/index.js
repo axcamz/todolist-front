@@ -1,16 +1,16 @@
-import { CenterScreen, Container, PlayfairFont } from "../../atoms"
+import { CenterScreen, Container, Body } from "../../atoms"
 import { Form } from "../../organisms"
 
 const Auth = ({children, onSubmit}) => {
     
 
     return (
-        <PlayfairFont>
+        <Body bgColor="gray">
             <Container>
                 <CenterScreen>
-                    <div className="shadow-lg h-3/4 max-w-min rounded-lg overflow-hidden flex">
+                    <div className="h-3/4 shadow-lg max-h-card max-w-min rounded-lg overflow-hidden flex">
                         <div className="bg-gray-900 md:block hidden md:w-96 h-full"></div>
-                        <div className="p-5 w-96">
+                        <div className="p-5 w-96 bg-white">
                             <Form onSubmit={onSubmit}>
                                 {children}
                             </Form>
@@ -18,7 +18,7 @@ const Auth = ({children, onSubmit}) => {
                     </div>
                 </CenterScreen>
             </Container>
-        </PlayfairFont>
+        </Body>
     )
 }
 

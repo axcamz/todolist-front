@@ -2,7 +2,7 @@ import Input from './Input'
 import Container from './Container'
 import CenterScreen from './CenterScreen'
 import ButtonSubmit from './ButtonSubmit'
-import PlayfairFont from './PlayfairFont'
+import Body from './Body'
 import TextHeader from './TextHeader'
 import ToggleEyeIcon from './ToggleEyeIcon'
 
@@ -11,7 +11,7 @@ export {
     Container,
     CenterScreen,
     ButtonSubmit,
-    PlayfairFont,
+    Body,
     TextHeader,
     ToggleEyeIcon
 }
